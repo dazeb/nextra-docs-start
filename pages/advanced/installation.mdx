@@ -1,0 +1,81 @@
+---
+title: "Installation"
+description: "Learn how to install and set up at0m themes in your project"
+---
+
+import CodeBlock from '../../components/codeblock';
+import Steps from '../../components/steps';
+
+# Installation
+
+Follow these steps to install and set up at0m themes in your project.
+
+<Steps>
+  <Steps.Step>
+    ### Install dependencies
+
+    First, install the necessary dependencies:
+
+    ```bash
+    npm install tailwindcss @shadcn/ui at0m-themes
+    ```
+
+    If you're using yarn:
+
+    ```bash
+    yarn add tailwindcss @shadcn/ui at0m-themes
+    ```
+  </Steps.Step>
+
+  <Steps.Step>
+    ### Set up TailwindCSS
+
+    If you haven't already, initialize TailwindCSS in your project:
+
+    ```bash
+    npx tailwindcss init -p
+    ```
+
+    This will create a `tailwind.config.js` file in your project root.
+  </Steps.Step>
+
+  <Steps.Step>
+    ### Configure TailwindCSS
+
+    <CodeBlock
+        code={`function helloWorld() {
+        console.log("Hello, world!");
+      }`}
+        language="javascript"
+    />
+
+    Update your `tailwind.config.js` to include the paths to your template files:
+
+    ```javascript
+    module.exports = {
+      content: [
+        './pages/**/*.{js,ts,jsx,tsx,mdx}',
+        './components/**/*.{js,ts,jsx,tsx,mdx}',
+        './app/**/*.{js,ts,jsx,tsx,mdx}',
+        './node_modules/at0m-themes/**/*.js', // Add this line
+      ],
+      plugins: [require('@tailwindcss/typography')],
+    }
+    ```
+  </Steps.Step>
+
+  <Steps.Step>
+    ### Import styles
+
+    In your main CSS file (often `globals.css`), import the at0m themes styles:
+
+    ```css
+    @import 'tailwindcss/base';
+    @import 'tailwindcss/components';
+    @import 'tailwindcss/utilities';
+    @import 'at0m-themes/styles.css';
+    ```
+  </Steps.Step>
+</Steps>
+
+Congratulations! You've successfully installed at0m themes. Next, check out the [Usage](/usage) guide to learn how to use the components in your project.
